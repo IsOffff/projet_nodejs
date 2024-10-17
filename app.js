@@ -1,2 +1,4 @@
-console.log("Hello World");
-require('./index');
+function getAppMessage() {
+  return "Hello , world";
+}
+module.exports = { getAppMessage };

@@ -1,7 +1,7 @@
-const now = new Date();
-const year = now.getFullYear();
-const startOfTheYear = new Date(year, 0, 1);
-const diff = now - startOfTheYear;
-const dayOfYear = Math.ceil(diff / (1000 * 60 * 60 * 24));
+function getCurrentDate() {
+  const date = new Date();
+  const dayOfYear = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+  return `Nous sommes le ${date.toLocaleDateString()}, plus précisément le ${dayOfYear} jour de l'année 2024.`;
+}
 
-console.log(`Nous sommes le ${now.toLocaleDateString()}, plus précisement le ${dayOfYear} jour de l'année.`);
+module.exports = { getCurrentDate };
